@@ -6,14 +6,13 @@
         <title>My Portfolio</title>
         <link rel="stylesheet" href="style.css" />
         <script
-            src="https://kit.fontawesome.com/a79b2589d4.js"
-            crossorigin="anonymous"
+            src="script.js" defer
         ></script>
     </head>
     <body>
         <!-- Navbar -->
         <nav class="navbar">
-            <img src="..\images\logo\Aether.png" alt="Logo" class="logo" />
+            <img src="images\logo\Aether.png" alt="Logo" class="logo" />
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Home</a></li>
@@ -105,7 +104,7 @@
                     <div class="skills-grid">
 
                         <div class="skill">
-                            <img src="..\images\skills\monitor.svg" alt="monitor">
+                            <img src="images\skills\monitor.svg" alt="monitor">
                             <h1>Front-End Development</h1>
                             <p>
                                 Design and build clean, responsive websites using HTML and CSS.
@@ -116,7 +115,7 @@
                         </div>
 
                         <div class="skill">
-                            <img src="..\images\skills\hard-drive.svg" alt="hard-drive">
+                            <img src="images\skills\hard-drive.svg" alt="hard-drive">
                             <h1>Computer Assembly & Maintenance</h1>
                             <p>
                                 Assemble desktop computers from individual parts, replace or upgrade
@@ -127,7 +126,7 @@
                         </div>
                         
                         <div class="skill">
-                            <img src="..\images\skills\printer.svg" alt="printer">
+                            <img src="images\skills\printer.svg" alt="printer">
                             <h1>Printer Setup & Maintenance</h1>
                             <p>
                                 Install and configure printers for both home and office environments.
@@ -138,7 +137,7 @@
                         </div>
                         
                         <div class="skill">
-                            <img src="..\images\skills\help-circle.svg" alt="help-circle">
+                            <img src="images\skills\help-circle.svg" alt="help-circle">
                             <h1>Technical Support</h1>
                             <p>
                                 Provide assistance for hardware, software, and network issues. Diagnose
@@ -149,7 +148,7 @@
                         </div>
                         
                         <div class="skill">
-                            <img src="..\images\skills\phone-call.svg" alt="phone-call">
+                            <img src="images\skills\phone-call.svg" alt="phone-call">
                             <h1>Customer Service in IT</h1>
                             <p>
                                 Deliver friendly and professional support by actively listening to user
@@ -159,7 +158,7 @@
                         </div>
 
                         <div class="skill">
-                            <img src="..\images\skills\node.svg" alt="node">
+                            <img src="images\skills\node.svg" alt="node">
                             <h1>Networking Fundamentals</h1>
                             <p>
                                 Set up and configure small office or home networks. Work with routers, switches,
@@ -191,11 +190,11 @@
                                     chapters through a clean and responsive interface.
                                 </p>
                             </div>
-                            <img src="..\images\projects\MangaArchive.png" alt="MangaArchive">
+                            <img src="images\projects\MangaArchive.png" alt="MangaArchive">
                         </div>
     
                         <div class="project-info">
-                            <img src="..\images\projects\GenshinGrub.png" alt="GenshinGrub">
+                            <img src="images\projects\GenshinGrub.png" alt="GenshinGrub">
                             <div id="project-desc" class="project-right">
                                 <p class="info-right">
                                     <b>Genshin Grub</b> is a food delivery web design concept inspired by Genshin
@@ -214,7 +213,7 @@
                                     and a visually engaging player experience.
                                 </p>
                             </div>
-                            <img src="..\images\projects\TankHey!.png" alt="TankHey!">
+                            <img src="images\projects\TankHey!.png" alt="TankHey!">
                         </div>
                 
                     </div   >
@@ -231,10 +230,10 @@
                         <h2>Contact Me</h2>
                         <p>Feel free to reach out below 👇</p>
                         <div class="contacts">
-                            <a href="https://web.facebook.com/danjustinecongson.ibarra"><img src="..\images\contacts\facebook.svg" alt="facebook"></a>
-                            <a href="https://x.com/WarmSteve125"><img src="..\images\contacts\x.svg" alt="x"></a>
-                            <a href="https://www.instagram.com/danjustineibarra/"><img src="..\images\contacts\instagram.svg" alt="instagram"></a>
-                            <a href="https://github.com/Aether926"><img src="..\images\contacts\github.svg" alt="github"></a>
+                            <a href="https://web.facebook.com/danjustinecongson.ibarra"><img src="images\contacts\facebook.svg" alt="facebook"></a>
+                            <a href="https://x.com/WarmSteve125"><img src="images\contacts\x.svg" alt="x"></a>
+                            <a href="https://www.instagram.com/danjustineibarra/"><img src="images\contacts\instagram.svg" alt="instagram"></a>
+                            <a href="https://github.com/Aether926"><img src="images\contacts\github.svg" alt="github"></a>
                         </div>
                     </div>
                 </div>
@@ -243,64 +242,8 @@
             <!-- Footer -->
     
             <footer>
-                <p>&copy; 2025 <img src="..\images\logo\Aether_no_bg.png" alt="Aether"> | All Rights Reserved</p>
+                <p>&copy; 2025 <img src="images\logo\Aether_no_bg.png" alt="Aether"> | All Rights Reserved</p>
             </footer>
         </div>
-        
-        <!-- JavaScript for mobile menu -->
-        <script>
-            // ===== Hamburger Toggle =====
-            const hamburger = document.getElementById("hamburger");
-            const navMenu = document.getElementById("navLinks");
-
-            hamburger.addEventListener("click", () => {
-                navMenu.classList.toggle("show");
-            });
-
-            // ===== Skills Animation (Intersection Observer) =====
-            const skills = document.querySelectorAll(".skill");
-
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("show"); // show when visible
-                        } else {
-                            entry.target.classList.remove("show"); // hide again when not visible
-                        }
-                    });
-                },
-                { threshold: 0.3 }
-            );
-
-            skills.forEach((skill) => observer.observe(skill));
-
-            // ===== Navbar Scroll Highlight (Scroll Spy) =====
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".nav-links a");
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop - 80; // adjust for navbar height
-                    const sectionHeight = section.clientHeight;
-
-                    if (
-                        pageYOffset >= sectionTop &&
-                        pageYOffset < sectionTop + sectionHeight
-                    ) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach((link) => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + current) {
-                        link.classList.add("active");
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
